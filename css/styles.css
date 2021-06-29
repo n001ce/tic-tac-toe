@@ -1,0 +1,51 @@
+.body{
+  height: 700px;
+  width: 700px;
+}
+.board{
+  margin: 5% 40%;
+  height: 610px;
+  width: 610px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-items: center;
+  background-color: black;
+
+}
+.board div {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5px;
+    background-color: white;
+    justify-content: center;
+    justify-items: center;
+    font-size:200px;
+    text-align-last: center;
+  }
+
+.endGame{
+  display: none;
+  width: 200px;
+  background-color: rgba(205,133,63, 0.8);
+  margin-left: 50%;
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 2em;
+
+}
+.start{
+  height: 40px;
+  width: 80px;
+  background-color: blue;
+  color: white;
+
+}
+
+.hidden{
+  display: none;
+}
