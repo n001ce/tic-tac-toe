@@ -1,10 +1,13 @@
+let condition = document.querySelector("buttonEl")
 let gameWon
 let origBoard 
 let huPlayer = 'X' 
-let aiPlayer ='O' 
-let huPlayer2="O"
-const computerBtn = document.querySelector('.computer')
-const playerBtn = document.querySelector('.player')
+let aiPlayer = "O"
+let player2 = "O"
+
+let buttonEl = document.querySelector("button")
+let hardBtn = document.querySelector('#hard')
+let easyBtn = document.querySelector('#easy')
 const containerEl = document.querySelector('.container')
 const winCombos = [
     [0,1,2],
@@ -19,12 +22,38 @@ const winCombos = [
 const boardEl = document.querySelector('.board')
 const board = document.querySelectorAll('.board > div')
 
+init()
+
+easyBtn.addEventListener("click", function(e){
+	e.preventDefault()
+	condition = "easy"
+	startGame()
+	return condition
+	})
+
+hardBtn.addEventListener("click", function(e){
+	e.preventDefault()
+	condition = "hard"
+	startGame()
+	return condition
+	})
 
 
+//Initialization
+function init(){
+	containerEl.style.display="block"
+	easyBtn.style.display="block"
+	hardBtn.style.display="block"
+	boardEl.style.display="none"
+    document.querySelector('.endGame').style.display ="none"; //hide the end game display
+}
+
+//Start the game with empty board and hide the options menu
 function startGame(){
+	console.log(condition)
 	containerEl.style.display="none"
-	playerBtn.style.display="none"
-	computerBtn.style.display="none"
+	easy.style.display="none"
+	hard.style.display="none"
 	boardEl.style.display="flex"
     document.querySelector('.endGame').style.display ="none"; //hide the end game display
     origBoard = Array.from(Array(9).keys())//create a copy of the 
@@ -36,23 +65,17 @@ function startGame(){
 }
 }
 
-function changeOpp(){
-	containerEl.style.display="block"
-	playerBtn.style.display="block"
-	computerBtn.style.display="block"
-	boardEl.style.display="none"
-    document.querySelector('.endGame').style.display ="none"; //hide the end game display
-}
-
-
+//register the position clicked for the user and find the bestspot for the AI
 function turnClick(square){
     if(typeof origBoard[square.target.id] == 'number'){
         turn(square.target.id, huPlayer)
-        if(!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
-        }      
+	}if(!checkWin(origBoard, huPlayer) && !checkTie()){
+		turn(bestSpot(), aiPlayer);
+		return
     }
+}      
 
-
+//check players turn
 function turn(squareId, player){
     origBoard[squareId] = player;
     document.getElementById(squareId).innerText = player;
@@ -60,57 +83,21 @@ function turn(squareId, player){
     if(gameWon) gameOver(gameWon)
 }
 
-
-function checkWin(board, player) {
-	let plays = board.reduce((a, e, i) => 
-		(e === player) ? a.concat(i) : a, []);
-	let gameWon = null;
-	for (let [index, win] of winCombos.entries()) {
-		if (win.every(elem => plays.indexOf(elem) > -1)) {
-			gameWon = {index: index, player: player};
-			break;
-		}
-	}
-	return gameWon;
-}
-function gameOver(gameWon) {
-	for (let index of winCombos[gameWon.index]) {
-		document.getElementById(index).style.backgroundColor =
-			gameWon.player == huPlayer ? "blue" : "red";
-	}
-	for (let i = 0; i < board.length; i++) {
-		board[i].removeEventListener('click', turnClick, false);
-	}
-    declareWinner(gameWon.player == huPlayer ? "You Win!" : "You Lose.")
-}
-
-function declareWinner(who){
-    document.querySelector("#musicplayer").toggleAttribute('autoplay')
-    document.querySelector(".endGame").style.display = "block";
-    document.querySelector(".endGame .text").innerText = who;
-}
-
+//check for empty squares
 function emptySquares() {
 	return origBoard.filter(s => typeof s == 'number');
 }
-function bestSpot(){
-    return minmax(origBoard, aiPlayer).index;
-}
-function checkTie(){
-    if(emptySquares().length ==0){
-        for(let i=0; i < board.length; i++){
-            board[i].style.backgroundColor = "green";
-            board[i].removeElementListener('click', turnClick, false)
-        }
-        declareWinner("Tie Game!")
-        return true
-    }
-    return false
-}
+
+//find the best spot function utilizing minmax method
 function bestSpot() {
-	return minimax(origBoard, aiPlayer).index;
+	if(condition === "easy"){
+		return emptySquares()[1]
+	}else{
+		return minimax(origBoard, aiPlayer).index;
+}
 }
 
+//Check for a tie
 function checkTie() {
 	if (emptySquares().length == 0) {
 		for (let i = 0; i < board.length; i++) {
@@ -122,6 +109,8 @@ function checkTie() {
 	}
 	return false;
 }
+
+//AI Unbeatable algorithm
 
 function minimax(newBoard, player) {
 	let availSpots = emptySquares(newBoard);
@@ -172,3 +161,38 @@ function minimax(newBoard, player) {
 	}
 	return moves[bestMove];
 }
+
+//Check for the win case
+function checkWin(board, player) {
+	let plays = board.reduce((acc, elem, ind) => 
+		(elem === player) ? acc.concat(ind) : acc, []);
+	let gameWon = null;
+	for (let [index, win] of winCombos.entries()) {
+		if (win.every(elem => plays.indexOf(elem) > -1)) {
+			gameWon = {index: index, player: player};
+			break;
+		}
+	}
+	return gameWon;
+}
+
+//GameOver when gameWon
+function gameOver(gameWon) {
+	for (let index of winCombos[gameWon.index]) {
+		document.getElementById(index).style.backgroundColor =
+			gameWon.player == huPlayer ? "blue" : "red";
+	}
+	for (let i = 0; i < board.length; i++) {
+		board[i].removeEventListener('click', turnClick, false);
+	}
+    declareWinner(gameWon.player == huPlayer ? "You Win!" : "You Lose.")
+}
+
+//render the winner in the box
+function declareWinner(who){
+    document.querySelector(".endGame").style.display = "block";
+    document.querySelector(".endGame .text").innerText = who;
+}
+
+
+

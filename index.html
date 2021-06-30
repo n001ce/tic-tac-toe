@@ -13,12 +13,13 @@
         <h1>Tic Tac Toe</h1>
         <div class="options">
             <h2>SELECT OPPONENT</h2>
-            <button class="computer" value="submit" >COMPUTER</button>
-            <button class="player">PLAYER</button>
-            <button class="start" onclick = "startGame()">START</button>
+            <form class = "userInput">
+            <button id="easy">EASY</button>
+            <button id="hard">HARD</button>
+            </form>
         </div>
         </div>
-    <div class="board" style="display: none">
+    <div class="board">
         <div id= "0">
         </div>
         <div id= "1">
@@ -38,12 +39,9 @@
         <div id="8">
         </div>
         <button class="start" onclick = "startGame()">Reset</button>
-        <button class ="change" onclick= "changeOpp()">CHANGE</button>
+        <button class ="change" onclick= "init()">CHANGE</button>
         </div>
         <div class="endGame">
-            <audio id="musicplayer">
-                <source src="/css/oh-brother-this-guy-stinks_FFdigtm.mp3">
-            </audio>
             <div class ="text"></div>
         </div>
     </div>

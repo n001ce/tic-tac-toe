@@ -98,7 +98,7 @@ h1{
   font-family: sponge;
 }
 
-.computer{
+#easy{
   align-items: center;
   justify-content: center;
   margin-top: 300px;
@@ -106,14 +106,15 @@ h1{
   background-color: purple;
   color: white;
   margin-bottom: 10px;
-  padding-right:84px;
+  padding-right:10px;
   font-family:sponge;
 }
-.player{
+#hard{
+  align-items: center;
+  justify-content: center;
   border: solid black;
   background-color: blue;
   color: white;
   margin-bottom: 20px;
   font-family:sponge;
-  padding: 10px;
 }
