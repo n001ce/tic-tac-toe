@@ -49,3 +49,54 @@
 .hidden{
   display: none;
 }
+
+.dropbtn{
+  background-color: black;
+  color: white;
+  padding: 4px;
+  font-size: 14px;
+  border: none;
+}
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: lightgrey;
+  min-width: 4px;
+  z-index: 2;
+}
+.dropdown-content div {
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block
+}
+
+.dropdown-content div:hover {background-color: white;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: grey;}
+
+
+.computer{
+  height: 50px;
+  width: 100px;
+  background-color: blue
+}
+h1, h2{
+  justify-content: center;
+}
+.container{
+  margin: 5% 40%;
+  height: 610px;
+  width: 610px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-items: center;
+  background-color: white;
+}

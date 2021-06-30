@@ -1,0 +1,70 @@
+@font-face{
+    src: url(/SpongeboyRegular-gx2n6.otf);
+    font-family: sponge;
+}
+body{
+    height: 100vh;
+    background-image: url("/css/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    margin: 10% 40%;
+    max-height: 610px;
+    max-width: 610px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "header header header"
+                         "options options options"
+                         "options options options";
+    justify-content: center;
+    justify-items: center;
+}
+
+h1{
+    grid-area: header;
+    font-size: 50px;
+    color: yellow;
+    font-family: sponge;
+    justify-content: center;
+    justify-items: center;
+}
+
+.options{
+    display: grid;
+    grid-area: options;
+    max-height: cover;
+    max-width: 40vw;
+    font-size: 20px;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+    color: magenta;
+    background-image: url("/css/spongebob.png");
+    background-size: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 100px;
+    font-family: sponge;
+}
+
+.computer{
+    margin-top: 300px;
+    border: solid black;
+    background-color: purple;
+    color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family:sponge;
+}
+.player{
+    border: solid black;
+    background-color: blue;
+    color: white;
+    margin-bottom: 20px;
+    font-family:sponge;
+    padding: 10px;
+}
+

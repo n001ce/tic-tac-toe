@@ -1,6 +1,3 @@
-// //tic tac toe has 9 boxes.
-// //each box is 
-// const 
 let gameWon
 let origBoard 
 let huPlayer = 'X'  
