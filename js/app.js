@@ -4,7 +4,7 @@ let origBoard
 let huPlayer = 'X' 
 let aiPlayer = "O"
 let player2 = "O"
-
+let randomEmpty
 let buttonEl = document.querySelector("button")
 let hardBtn = document.querySelector('#hard')
 let easyBtn = document.querySelector('#easy')
@@ -70,6 +70,7 @@ function turnClick(square){
     if(typeof origBoard[square.target.id] == 'number'){
         turn(square.target.id, huPlayer)
 	}if(!checkWin(origBoard, huPlayer) && !checkTie()){
+		randomEmpty = Math.floor(Math.random() * (2-1) + 1)
 		turn(bestSpot(), aiPlayer);
 		return
     }
@@ -91,7 +92,7 @@ function emptySquares() {
 //find the best spot function utilizing minmax method
 function bestSpot() {
 	if(condition === "easy"){
-		return emptySquares()[1]
+		return emptySquares()[randomEmpty] || emptySquares()[0]
 	}else{
 		return minimax(origBoard, aiPlayer).index;
 }
