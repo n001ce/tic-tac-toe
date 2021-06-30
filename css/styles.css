@@ -2,11 +2,60 @@
   src: url(/css/SpongeboyRegular-gx2n6.otf);
   font-family: sponge;
 }
+
 body{
-  min-height: 100vh;
+  height: 100vh;
   background-image: url("/css/background.png");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.board{
+    margin: 5% 40%;
+    height: 610px;
+    width: 610px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.board > div {
+  font-family:sponge;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 5px;
+  color: yellow;
+  background-color: #94bbeea4;
+  justify-content: center;
+  justify-items: center;
+  font-size:125px;
+  text-align-last: center;
+}
+.endGame{
+  display: none;
+  width: 200px;
+  background-color: rgba(205,133,63, 0.8);
+  margin-left: 50%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 2em;
+}
+button{
+  height: 40px;
+  width: 80px;
+  background-color: #94bbeea4;
+  font-family: sponge;
+  color: yellow;
+  border-radius: 40px;
+  font-size: 13px;
+}
+
+.hidden{
+  display: none;
 }
 
 .container{
@@ -22,7 +71,6 @@ body{
   justify-content: center;
   justify-items: center;
 }
-
 h1{
   grid-area: header;
   font-size: 50px;
@@ -69,46 +117,3 @@ h1{
   font-family:sponge;
   padding: 10px;
 }
-
-.board div {
-    font-family:sponge;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 5px;
-    color: yellow;
-    background-color: #94bbeea4;
-    justify-content: center;
-    justify-items: center;
-    font-size:125px;
-    text-align-last: center;
-  }
-
-.endGame{
-  display: none;
-  width: 200px;
-  background-color: rgba(205,133,63, 0.8);
-  margin-left: 51%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
-  border-radius: 5px;
-  color: white;
-  font-size: 2em;
-
-}
-button{
-  height: 40px;
-  width: 80px;
-  background-color: #94bbeea4;
-  font-family: sponge;
-  color: yellow;
-  border-radius: 40px;
-  font-size: 13px;
-
-}
-
-.hidden{
-  display: none;
-}
-
-

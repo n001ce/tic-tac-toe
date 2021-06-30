@@ -5,48 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">    
-    <script defer src="js/game.js"></script>
+    <script defer src="js/app.js"></script>
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div class="options">
+            <h2>SELECT OPPONENT</h2>
+            <button class="computer" value="submit" >COMPUTER</button>
+            <button class="player">PLAYER</button>
+            <button class="start" onclick = "startGame()">START</button>
+        </div>
+        </div>
+    <div class="board" style="display: none">
+        <div id= "0">
+        </div>
+        <div id= "1">
+        </div>  
+        <div id="2">
+        </div>  
+        <div id="3">
+        </div> 
+        <div id= "4">
+        </div>
+        <div id="5">
+        </div>
+        <div id="6">
+        </div>
+        <div id="7">
+        </div>
+        <div id="8">
+        </div>
+        <button class="start" onclick = "startGame()">Reset</button>
+        </div>
+        <div class="endGame">
+            <audio id="musicplayer">
+                <source src="/css/oh-brother-this-guy-stinks_FFdigtm.mp3">
+            </audio>
+            <div class ="text"></div>
+        </div>
+    </div>
+
+
 </body>
-</html>
-<div class="container">
-    <h1>Tic Tac Toe</h1>
-    <div class="options">
-        <h2>SELECT OPPONENT</h2>
-        <button class="computer" value="submit" onclick="play()">COMPUTER</button>
-        <audio id="audio" src="/css/victoryscreech.mp3"></audio>
-        <button class="player">PLAYER</button>
-    </div>
-    </div>
-<div class="board" hidden></div>
-    <div id= "0" hidden>
-    </div>
-    <div id= "1" hidden>
-    </div>  
-    <div id="2" hidden>
-    </div>  
-    <div id="3" hidden>
-    </div> 
-    <div id= "4" hidden>
-    </div>
-    <div id="5" hidden>
-    </div>
-    <div id="6" hidden>
-    </div>
-    <div id="7" hidden>
-    </div>
-    <div id="8" hidden>
-    </div>
-    <button class="start" onclick = "startGame()" hidden>Reset</button>
-    <button class="change" onclick = "changeOp()" hidden>Change</button>
-    </div>
-    <div class="endGame">
-        <audio id="musicplayer">
-            <source src="/css/oh-brother-this-guy-stinks_FFdigtm.mp3">
-        </audio>
-        <div class ="text"></div>
-    </div>
-</div>
+</html> 
