@@ -1,6 +1,12 @@
-.body{
-  height: 700px;
-  width: 700px;
+@font-face{
+  src: url(/css/SpongeboyRegular-gx2n6.otf);
+  font-family: sponge;
+}
+body{
+  height: 100vh;
+  background-image: url("/css/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .board{
   margin: 5% 40%;
@@ -10,17 +16,19 @@
   flex-wrap: wrap;
   justify-content: space-between;
   justify-items: center;
-  background-color: black;
+
 
 }
 .board div {
+    font-family:sponge;
     width: 200px;
     height: 200px;
     margin-bottom: 5px;
-    background-color: white;
+    color: yellow;
+    background-color: #94bbeea4;
     justify-content: center;
     justify-items: center;
-    font-size:200px;
+    font-size:125px;
     text-align-last: center;
   }
 
@@ -29,7 +37,6 @@
   width: 200px;
   background-color: rgba(205,133,63, 0.8);
   margin-left: 50%;
-
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
@@ -38,11 +45,14 @@
   font-size: 2em;
 
 }
-.start{
+button{
   height: 40px;
   width: 80px;
-  background-color: blue;
-  color: white;
+  background-color: #94bbeea4;
+  font-family: sponge;
+  color: yellow;
+  border-radius: 40px;
+  font-size: 13px;
 
 }
 
@@ -50,42 +60,10 @@
   display: none;
 }
 
-.dropbtn{
-  background-color: black;
-  color: white;
-  padding: 4px;
-  font-size: 14px;
-  border: none;
-}
-
-.dropdown{
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content{
-  display: none;
-  position: absolute;
-  background-color: lightgrey;
-  min-width: 4px;
-  z-index: 2;
-}
-.dropdown-content div {
-  color: black;
-  padding: 10px 10px;
-  text-decoration: none;
-  display: block
-}
-
-.dropdown-content div:hover {background-color: white;}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: grey;}
-
-
 .computer{
   height: 50px;
   width: 100px;
-  background-color: blue
+  color: blue
 }
 h1, h2{
   justify-content: center;

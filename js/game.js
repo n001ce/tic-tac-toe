@@ -57,7 +57,7 @@ function checkWin(board, player) {
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
 		document.getElementById(index).style.backgroundColor =
-			gameWon.player == huPlayer ? "blue" : "red";
+			gameWon.player == huPlayer ? "green" : "red";
 	}
 	for (let i = 0; i < board.length; i++) {
 		board[i].removeEventListener('click', turnClick, false);
