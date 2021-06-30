@@ -20,6 +20,7 @@ const boardEl = document.querySelector('.board')
 const board = document.querySelectorAll('.board > div')
 
 
+
 function startGame(){
 	containerEl.style.display="none"
 	playerBtn.style.display="none"
@@ -34,6 +35,15 @@ function startGame(){
         board[i].addEventListener('click', turnClick, false)
 }
 }
+
+function changeOpp(){
+	containerEl.style.display="block"
+	playerBtn.style.display="block"
+	computerBtn.style.display="block"
+	boardEl.style.display="none"
+    document.querySelector('.endGame').style.display ="none"; //hide the end game display
+}
+
 
 function turnClick(square){
     if(typeof origBoard[square.target.id] == 'number'){
