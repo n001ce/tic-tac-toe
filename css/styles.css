@@ -11,7 +11,7 @@ body{
 }
 
 .board{
-    margin: 5% 40%;
+    margin: 5% 35%;
     height: 610px;
     width: 610px;
     display: flex;
@@ -26,17 +26,19 @@ body{
   height: 200px;
   margin-bottom: 5px;
   color: yellow;
-  background-color: #94bbeea4;
+  background-color: #239db380;
   justify-content: center;
   justify-items: center;
   font-size:125px;
   text-align-last: center;
+  border-radius: 100px;
 }
 .endGame{
+  position:absolute;
   display: none;
   width: 200px;
   background-color: rgb(250, 121, 0);
-  margin-left: 50%;
+  margin-left: 45.5%;
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
