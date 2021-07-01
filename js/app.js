@@ -9,6 +9,9 @@ let buttonEl = document.querySelector("button")
 let hardBtn = document.querySelector('#hard')
 let easyBtn = document.querySelector('#easy')
 const containerEl = document.querySelector('.container')
+const startSound = new Audio();
+startSound.src="/css/living.mp3"
+
 const winCombos = [
     [0,1,2],
     [0,3,6],
@@ -106,6 +109,7 @@ function checkTie() {
 			board[i].removeEventListener('click', turnClick, false);
 		}
 		declareWinner("Tie Game!")
+		sound.src="/css/wawawa.mp3"
 		return true;
 	}
 	return false;
@@ -182,11 +186,12 @@ function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
 		document.getElementById(index).style.backgroundColor =
 			gameWon.player == huPlayer ? "blue" : "red";
+			
 	}
 	for (let i = 0; i < board.length; i++) {
 		board[i].removeEventListener('click', turnClick, false);
 	}
-    declareWinner(gameWon.player == huPlayer ? "You Win!" : "You Lose.")
+    declareWinner(gameWon.player == huPlayer ? "You Win!"  : "You Lose.")
 }
 
 //render the winner in the box
@@ -194,6 +199,7 @@ function declareWinner(who){
     document.querySelector(".endGame").style.display = "block";
     document.querySelector(".endGame .text").innerText = who;
 }
+	
 
 
 

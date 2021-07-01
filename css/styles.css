@@ -59,9 +59,12 @@ button{
 }
 
 .container{
-  margin: 10% 40%;
+  position: fixed;
+  background-color:  #94ebee83;
+  margin: 5% 35%;
+  padding: 40px 10px;
   max-height: 610px;
-  max-width: 610px;
+  width: 610px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -70,6 +73,8 @@ button{
                        "options options options";
   justify-content: center;
   justify-items: center;
+  border-radius: 90px;
+  margin-bottom: 20px;
 }
 h1{
   grid-area: header;
@@ -78,13 +83,14 @@ h1{
   font-family: sponge;
   justify-content: center;
   justify-items: center;
+  text-align: center;
 }
 
 .options{
   display: grid;
   grid-area: options;
-  max-height: cover;
-  max-width: 40vw;
+  max-height: 600px;
+  max-width: 100vw;
   font-size: 20px;
   align-self: center;
   justify-content: center;
@@ -94,8 +100,8 @@ h1{
   background-size: 250px;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 100px;
   font-family: sponge;
+  margin: 20px;
 }
 
 #easy{

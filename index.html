@@ -14,8 +14,8 @@
         <div class="options">
             <h2>SELECT OPPONENT</h2>
             <form class = "userInput">
-            <button id="easy">EASY</button>
-            <button id="hard">HARD</button>
+            <button id="easy" href="#" onmousedown="startSound.play()">EASY</button>
+            <button id="hard" href="#" onmousedown="startSound.play()">HARD</button>
             </form>
         </div>
         </div>
@@ -41,7 +41,7 @@
         <button class="start" onclick = "startGame()">Reset</button>
         <button class ="change" onclick= "init()">CHANGE</button>
         </div>
-        <div class="endGame">
+        <div class="endGame" onmouseover="lossSound.play()">
             <div class ="text"></div>
         </div>
     </div>
