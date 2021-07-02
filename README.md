@@ -29,4 +29,5 @@
 #gameOver() sets the div styles for who won the game (ie highlighted winning combination and setting
 #the inner text for declareWinner()
 #
-#
+#References: https://www.youtube.com/watch?v=P2TcQ3h0ipQ&t=1851s tutorial followed
+to understand AI algorithm. 
