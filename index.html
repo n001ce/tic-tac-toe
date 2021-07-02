@@ -12,7 +12,7 @@
     <div class="container">
         <h1>Tic Tac Toe</h1>
         <div class="options">
-            <h2>SELECT OPPONENT</h2>
+            <h2>SELECT DIFFICULTY</h2>
             <form class = "userInput">
             <button id="easy" href="#" onmousedown="startSound.play()">EASY</button>
             <button id="hard" href="#" onmousedown="startSound.play()">HARD</button>
@@ -20,32 +20,24 @@
         </div>
         </div>
     <div class="board">
-        <div id= "0">
-        </div>
-        <div id= "1">
-        </div>  
-        <div id="2">
-        </div>  
-        <div id="3">
-        </div> 
-        <div id= "4">
-        </div>
-        <div id="5">
-        </div>
-        <div id="6">
-        </div>
-        <div id="7">
-        </div>
-        <div id="8">
-        </div>
+        <div id= "0"></div>
+        <div id= "1"></div>  
+        <div id="2"></div>  
+        <div id="3"></div> 
+        <div id= "4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+        <div id="7"></div>
+        <div id="8"></div>
         <button class="start" onclick = "startGame()">Reset</button>
         <button class ="change" onclick= "init()">CHANGE</button>
         </div>
-        <div class="endGame" onmouseover="lossSound.play()">
+        <div class="endGame" onmouseover="startSound.play()">
+            <div class ="text"></div>
+        </div>
+        <div class="endGame" id="turn" onmouseover="startSound.play()">
             <div class ="text"></div>
         </div>
     </div>
-
-
 </body>
 </html> 

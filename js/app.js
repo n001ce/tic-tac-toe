@@ -1,16 +1,16 @@
-let condition = document.querySelector("buttonEl")
+let condition
 let gameWon
 let origBoard 
-let huPlayer = 'X' 
-let aiPlayer = "O"
-let player2 = "O"
 let randomEmpty
 let buttonEl = document.querySelector("button")
 let hardBtn = document.querySelector('#hard')
 let easyBtn = document.querySelector('#easy')
 const containerEl = document.querySelector('.container')
+const huPlayer = 'X' 
+const aiPlayer = "O"
 const startSound = new Audio();
-startSound.src="/css/living.mp3"
+startSound.src="/css/src_files/living.mp3"
+
 
 const winCombos = [
     [0,1,2],
@@ -53,7 +53,6 @@ function init(){
 
 //Start the game with empty board and hide the options menu
 function startGame(){
-	console.log(condition)
 	containerEl.style.display="none"
 	easy.style.display="none"
 	hard.style.display="none"
@@ -73,19 +72,28 @@ function turnClick(square){
     if(typeof origBoard[square.target.id] == 'number'){
         turn(square.target.id, huPlayer)
 	}if(!checkWin(origBoard, huPlayer) && !checkTie()){
-		randomEmpty = Math.floor(Math.random() * (2-1) + 1)
+		randomEmpty = Math.floor(Math.random() * (3-1) + 1)
 		turn(bestSpot(), aiPlayer);
-		return
     }
-}      
+	}
+
 
 //check players turn
 function turn(squareId, player){
-    origBoard[squareId] = player;
-    document.getElementById(squareId).innerText = player;
+    origBoard[squareId] = player
+    document.getElementById(squareId).innerText = player
     let gameWon = checkWin(origBoard, player)
-    if(gameWon) gameOver(gameWon)
+    if(gameWon){ gameOver(gameWon)}
+	else if(origBoard[squareId].innerText = huPlayer){
+		document.querySelector(".endGame").style.display = "block";
+		document.querySelector(".endGame .text").innerText = "X";
+	}else{
+		document.querySelector(".endGame").style.display = "block";
+		document.querySelector(".endGame .text").innerText = "O";
+	}
+	return player
 }
+
 
 //check for empty squares
 function emptySquares() {
@@ -94,8 +102,9 @@ function emptySquares() {
 
 //find the best spot function utilizing minmax method
 function bestSpot() {
+	setTimeout(minimax, 4000)
 	if(condition === "easy"){
-		return emptySquares()[randomEmpty] || emptySquares()[0]
+		return emptySquares()[1] || emptySquares()[randomEmpty]
 	}else{
 		return minimax(origBoard, aiPlayer).index;
 }
@@ -109,7 +118,7 @@ function checkTie() {
 			board[i].removeEventListener('click', turnClick, false);
 		}
 		declareWinner("Tie Game!")
-		sound.src="/css/wawawa.mp3"
+		lossSound.src="/css/src_files/wawawa.mp3"
 		return true;
 	}
 	return false;
@@ -199,7 +208,7 @@ function declareWinner(who){
     document.querySelector(".endGame").style.display = "block";
     document.querySelector(".endGame .text").innerText = who;
 }
-	
+
 
 
 

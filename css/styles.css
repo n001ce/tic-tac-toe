@@ -1,11 +1,11 @@
 @font-face{
-  src: url(/css/SpongeboyRegular-gx2n6.otf);
+  src: url(/css/src_files/SpongeboyRegular-gx2n6.otf);
   font-family: sponge;
 }
 
 body{
   height: 100vh;
-  background-image: url("/css/background.png");
+  background-image: url("/css/src_files/background.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -101,8 +101,8 @@ h1{
   justify-content: center;
   justify-items: center;
   color: magenta;
-  background-image: url("/css/spongebob.png");
-  background-size: 250px;
+  background-image: url("/css/src_files/spongebob.gif");
+  background-size: 400px;
   background-position: center;
   background-repeat: no-repeat;
   font-family: sponge;
